@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { loadConnectAndInitialize } from "@stripe/connect-js";
 
-const stripe_publishable_key = "pk_test_51PM8D5GvJVtKG6XifZTY3uWNjeKXU5ZcsvIGU5KT56wlyMBVC6kLqYqhwf1wHvh37ehrjpPptaCpbQHJkJJ1K7O200uxcfOMfz";
+const stripe_publishable_key = process.env.STRIPE_PUBLISHABLE_KEY;
 
 export const useStripeConnect = (connectedAccountId) => {
   const [stripeConnectInstance, setStripeConnectInstance] = useState();

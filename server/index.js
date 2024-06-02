@@ -11,17 +11,10 @@ const upload = require('./utils/upload');
 const Link = require('./schemas/Link');
 const File = require('./schemas/File');
 
-const stripe = require("stripe")(
-    // This is your test secret API key.
-    'sk_test_51PM8D5GvJVtKG6XiTmoXiGc65d7V7BeksVo9y1MA02478BnuoPcwCTQHsusrTGfhpUgdLpRQE7Sn2wZ7T0mabRPF009Ol1DvRC',
-    {
-      apiVersion: "2023-10-16",
-    }
-  );
+const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 
-const stripe_secret_key = "sk_test_51PM8D5GvJVtKG6XiTmoXiGc65d7V7BeksVo9y1MA02478BnuoPcwCTQHsusrTGfhpUgdLpRQE7Sn2wZ7T0mabRPF009Ol1DvRC";
-
-const stripe_publishable_key = "pk_test_51PM8D5GvJVtKG6XifZTY3uWNjeKXU5ZcsvIGU5KT56wlyMBVC6kLqYqhwf1wHvh37ehrjpPptaCpbQHJkJJ1K7O200uxcfOMfz";
+const stripe_secret_key = process.env.STRIPE_SECRET_KEY;
+const stripe_publishable_key = process.env.STRIPE_PUBLISHABLE_KEY;
 
 const app = express();
 app.use(cors({
