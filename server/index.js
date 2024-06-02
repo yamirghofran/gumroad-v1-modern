@@ -26,7 +26,7 @@ app.use(bodyParser.json());
 const morgan = require('morgan');
 app.use(morgan('dev'));
 
-const mongoURI = "mongodb+srv://amirghofrancsia:qq2PrIRXDIBuoo8j@cluster0.7flwwk9.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+const mongoURI = process.env.MONGO_URI;
 
 // Connect to MongoDB
 mongoose.connect(mongoURI, {
