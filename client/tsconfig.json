@@ -1,0 +1,32 @@
+{
+    "compilerOptions": {
+      "target": "es5",                          // Compile to ES5
+      "lib": ["dom", "dom.iterable", "esnext"], // Include typings for DOM and latest ECMAScript features
+      "allowJs": true,                          // Allow JavaScript files to be compiled
+      "skipLibCheck": true,                     // Skip type checking of declaration files
+      "esModuleInterop": true,                  // Enable ES module interop
+      "allowSyntheticDefaultImports": true,     // Allow default imports from modules with no default export
+      "strict": true,                           // Enable all strict type-checking options
+      "forceConsistentCasingInFileNames": true, // Disallow inconsistently-cased references to the same file
+      "module": "esnext",                       // Use ESNext module system
+      "moduleResolution": "node",               // Use Node.js module resolution
+      "resolveJsonModule": true,                // Allow importing JSON modules
+      "isolatedModules": true,                  // Ensure each file can be safely transpiled without relying on other imports
+      "noEmit": true,                           // Do not emit outputs (since Babel or another tool may be used to transpile)
+      "jsx": "react-jsx",                       // Support JSX in .tsx files: "react" | "react-jsx" (React 17+)
+      "baseUrl": ".",                           // Base directory for non-relative module names
+      "paths": {
+        "@/*": ["./src/*"],                         // Support for absolute import paths
+        "@/components/*": ["./src/components/*"],
+      }
+    },
+    "include": [
+      "src" // Include source files
+    ],
+    "exclude": [
+      "node_modules", // Exclude the node_modules directory
+      "**/*.spec.ts", // Exclude test files
+      "**/*.test.ts"  // Exclude test files
+    ]
+}
+  
